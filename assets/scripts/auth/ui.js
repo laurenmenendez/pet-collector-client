@@ -9,7 +9,7 @@ const onSignUpSuccess = function () {
   $('.sign-up').hide()
 }
 
-// confirm sign in succeeded
+// confirm sign in succeeded and transition to view2
 const onSignInSuccess = function (response) {
   console.log(response)
   store.user = response.user
@@ -31,6 +31,21 @@ const onChangePasswordSuccess = function () {
   $('#messages').text('Changed password successfully')
   $('#change-password').trigger('reset')
   $('#change-password').hide()
+}
+
+// confirm sign out succeeded and return page to view1
+const onSignOutSuccess = function () {
+  $('#messages').text('Signed out successfully')
+  store.user = null
+  $('#intro').show()
+  $('#change-password-button').hide()
+  $('#sign-out-button').hide()
+  $('#change-password').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#create').hide()
+  $('#update').hide()
+  $('#show').hide()
 }
 
 // error
