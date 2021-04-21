@@ -17,7 +17,7 @@ const onUpdate = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   api.update(formData)
-    .then(ui.onCreateSuccess)
+    .then(ui.onUpdateSuccess)
     .catch(ui.onError)
 }
 
