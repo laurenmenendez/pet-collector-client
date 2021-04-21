@@ -12,6 +12,16 @@ const onCreate = function (event) {
     .catch(ui.onError)
 }
 
+const onUpdate = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.update(formData)
+    .then(ui.onCreateSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
-  onCreate
+  onCreate,
+  onUpdate
 }
