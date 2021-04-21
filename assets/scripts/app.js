@@ -18,4 +18,6 @@ $(() => {
   $('#change-password-button').on('click', authEvents.onChangePasswordButton)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
+  // CRUD pet pet events
+  $('#create').on('submit', petEvents.onCreate)
 })

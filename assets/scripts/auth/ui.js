@@ -46,6 +46,8 @@ const onSignOutSuccess = function () {
   $('#create').hide()
   $('#update').hide()
   $('#show').hide()
+  $('#intro').show()
+  $('#main').hide()
 }
 
 // error
@@ -58,5 +60,6 @@ module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
   onChangePasswordSuccess,
+  onSignOutSuccess,
   onError
 }
