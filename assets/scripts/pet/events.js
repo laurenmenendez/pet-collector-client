@@ -21,7 +21,17 @@ const onUpdate = function (event) {
     .catch(ui.onError)
 }
 
+const onShow = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.show(formData)
+    .then(ui.onShowSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onCreate,
-  onUpdate
+  onUpdate,
+  onShow
 }

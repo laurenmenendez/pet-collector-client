@@ -21,4 +21,5 @@ $(() => {
   // CRUD pet pet events
   $('#create').on('submit', petEvents.onCreate)
   $('#update').on('submit', petEvents.onUpdate)
+  $('#show').on('submit', petEvents.onShow)
 })

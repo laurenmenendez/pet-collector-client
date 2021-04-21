@@ -27,7 +27,19 @@ const update = function (formData) {
   })
 }
 
+const show = function (formData) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/pets/show',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
-  update
+  update,
+  show
 }

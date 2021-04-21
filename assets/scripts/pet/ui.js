@@ -19,7 +19,6 @@ const onCreateSuccess = function (response) {
 
 const onUpdateSuccess = function (response) {
   // save returned pet object on store.user
-  console.log(response)
   store.user.pet = response.pet
   // create variable for html
   const pet = store.user.pet
@@ -33,7 +32,22 @@ const onUpdateSuccess = function (response) {
   $('#update').trigger('reset')
 }
 
+const onShowSuccess = function (response) {
+  // save returned pet object on store.user
+  store.user.pet = response.pet
+  // create variable for html
+  const pet = store.user.pet
+  // add pet info to html
+  $('#messages').html(
+    `<p>Pet name: ${pet.name}</p>
+    <p>Pet type: ${pet.type}</p>
+    <p>Pet age: ${pet.age}</p>`
+  )
+  $('#show').trigger('reset')
+}
+
 module.exports = {
   onCreateSuccess,
-  onUpdateSuccess
+  onUpdateSuccess,
+  onShowSuccess
 }
