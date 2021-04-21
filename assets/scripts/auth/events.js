@@ -23,7 +23,24 @@ const onSignIn = function (event) {
     .catch(ui.onError)
 }
 
+// show change password form when the change password nav button clicked
+const onChangePasswordButton = function () {
+  $('#change-password').show()
+}
+
+// change password event handler
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.changePassword(formData)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePasswordButton,
+  onChangePassword
 }
