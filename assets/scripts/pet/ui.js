@@ -14,7 +14,7 @@ const onCreateSuccess = function (response) {
     <p>Pet type: ${pet.type}</p>
     <p>Pet age: ${pet.age}</p>`
   )
-  $('#create').trigger('reset')
+  $('#create-form').trigger('reset')
 }
 
 const onUpdateSuccess = function (response) {
@@ -29,7 +29,7 @@ const onUpdateSuccess = function (response) {
     <p>Pet type: ${pet.type}</p>
     <p>Pet age: ${pet.age}</p>`
   )
-  $('#update').trigger('reset')
+  $('#update-form').trigger('reset')
 }
 
 const onShowSuccess = function (response) {
@@ -43,7 +43,7 @@ const onShowSuccess = function (response) {
     <p>Pet type: ${pet.type}</p>
     <p>Pet age: ${pet.age}</p>`
   )
-  $('#show').trigger('reset')
+  $('#show-form').trigger('reset')
 }
 
 module.exports = {
