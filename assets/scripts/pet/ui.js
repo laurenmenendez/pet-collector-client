@@ -10,9 +10,9 @@ const onCreateSuccess = function (response) {
   // add pet info to html
   $('#messages').html(
     `<p>Pet created!</p>
-    <p>Pet name: ${pet.name}</p>
-    <p>Pet type: ${pet.type}</p>
-    <p>Pet age: ${pet.age}</p>`
+    <p>Name: ${pet.name}</p>
+    <p>Type: ${pet.type}</p>
+    <p>Age: ${pet.age}</p>`
   )
   $('#create-form').trigger('reset')
 }
@@ -25,9 +25,9 @@ const onUpdateSuccess = function (response) {
   // add pet info to html
   $('#messages').html(
     `<p>Pet updated!</p>
-    <p>Pet name: ${pet.name}</p>
-    <p>Pet type: ${pet.type}</p>
-    <p>Pet age: ${pet.age}</p>`
+    <p>Name: ${pet.name}</p>
+    <p>Type: ${pet.type}</p>
+    <p>Age: ${pet.age}</p>`
   )
   $('#update-form').trigger('reset')
 }
@@ -39,9 +39,9 @@ const onShowSuccess = function (response) {
   const pet = store.user.pet
   // add pet info to html
   $('#messages').html(
-    `<p>Pet name: ${pet.name}</p>
-    <p>Pet type: ${pet.type}</p>
-    <p>Pet age: ${pet.age}</p>`
+    `<p>Name: ${pet.name}</p>
+    <p>Type: ${pet.type}</p>
+    <p>Age: ${pet.age}</p>`
   )
   $('#show-form').trigger('reset')
 }
@@ -51,9 +51,17 @@ const onIndexSuccess = function (response) {
   const pets = response.pets
   pets.forEach(pet => {
     $('#messages').append(
-      `<p>Pet name: ${pet.name}</p>
-      <p>Pet type: ${pet.type}</p>
-      <p>Pet age: ${pet.age}</p>`
+      `<p>Name: ${pet.name}</p>
+      <p>Type: ${pet.type}</p>
+      <p>Age: ${pet.age}</p>
+      <form id="update-form">
+        <h3 class="text-tertiary">Update pet</h3>
+        <input type="text" name="pet[oldName]" placeholder="Current pet name" required>
+        <input type="text" name="pet[name]" placeholder="New pet name">
+        <input type="text" name="pet[type]" placeholder="New pet type">
+        <input type="number" name="pet[age]" placeholder="New pet age">
+        <button type="submit" class="btn-pet">Submit</button>
+      </form>`
     )
   })
 }
@@ -63,10 +71,18 @@ const onDeleteSuccess = function () {
   $('#delete-form').trigger('reset')
 }
 
+// error
+const onError = function (err) {
+  console.error(err)
+  $('#messages').text('Something went wrong, please try again.')
+}
+
+
 module.exports = {
   onCreateSuccess,
   onUpdateSuccess,
   onShowSuccess,
   onIndexSuccess,
-  onDeleteSuccess
+  onDeleteSuccess,
+  onError
 }
