@@ -30,8 +30,15 @@ const onShow = function (event) {
     .catch(ui.onError)
 }
 
+const onIndex = function (event) {
+  api.index()
+    .then(ui.onIndexSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onCreate,
   onUpdate,
-  onShow
+  onShow,
+  onIndex
 }
