@@ -16,10 +16,10 @@ const create = function (formData) {
 }
 
 // send update patch request
-const update = function (formData) {
+const update = function (formData, id) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/pets',
+    url: config.apiUrl + '/pets/' + id,
     data: formData,
     headers: {
       Authorization: 'Bearer ' + store.user.token

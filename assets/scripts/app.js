@@ -9,7 +9,6 @@ $(() => {
   $('#change-password-button').hide()
   $('#sign-out-button').hide()
   $('#create').hide()
-  $('#update').hide()
   $('#show').hide()
   $('#main').hide()
   $('#index').hide()
@@ -22,8 +21,7 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   // CRUD pet events
   $('#create').on('submit', petEvents.onCreate)
-  $('#update').on('submit', petEvents.onUpdate)
-  $('#show').on('submit', petEvents.onShow)
+  $('#data').on('submit', petEvents.onUpdate)
   $('#show').on('submit', petEvents.onShow)
   $('#index').on('click', petEvents.onIndex)
   $('#delete').on('submit', petEvents.onDelete)

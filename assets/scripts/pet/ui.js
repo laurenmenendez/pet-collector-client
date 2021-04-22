@@ -18,11 +18,14 @@ const onCreateSuccess = function (response) {
 }
 
 const onUpdateSuccess = function (response) {
+  console.log('success')
+  console.log(response)
   // save returned pet object on store.user
   store.user.pet = response.pet
   // create variable for html
   const pet = store.user.pet
   // add pet info to html
+  $('#data').html('')
   $('#messages').html(
     `<p>Pet updated!</p>
     <p>Name: ${pet.name}</p>
@@ -49,14 +52,14 @@ const onShowSuccess = function (response) {
 const onIndexSuccess = function (response) {
   console.log(response)
   const pets = response.pets
+  $('#data').html('')
   pets.forEach(pet => {
-    $('#messages').append(
+    $('#data').append(
       `<p>Name: ${pet.name}</p>
       <p>Type: ${pet.type}</p>
       <p>Age: ${pet.age}</p>
-      <form id="update-form">
+      <form class="update-form" data-id="${pet._id}">
         <h3 class="text-tertiary">Update pet</h3>
-        <input type="text" name="pet[oldName]" placeholder="Current pet name" required>
         <input type="text" name="pet[name]" placeholder="New pet name">
         <input type="text" name="pet[type]" placeholder="New pet type">
         <input type="number" name="pet[age]" placeholder="New pet age">
@@ -76,7 +79,6 @@ const onError = function (err) {
   console.error(err)
   $('#messages').text('Something went wrong, please try again.')
 }
-
 
 module.exports = {
   onCreateSuccess,

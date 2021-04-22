@@ -17,7 +17,10 @@ const onUpdate = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.update(formData)
+  const id = $(form).data('id')
+  console.log(form)
+  console.log(id)
+  api.update(formData, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError)
 }
