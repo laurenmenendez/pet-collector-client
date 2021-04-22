@@ -38,8 +38,19 @@ const show = function (formData) {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiURL + '/pets',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   update,
-  show
+  show,
+  index
 }
