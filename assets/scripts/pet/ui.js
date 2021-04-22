@@ -46,8 +46,13 @@ const onShowSuccess = function (response) {
   $('#show-form').trigger('reset')
 }
 
+const onIndexSuccess = function (response) {
+  console.log(response)
+}
+
 module.exports = {
   onCreateSuccess,
   onUpdateSuccess,
-  onShowSuccess
+  onShowSuccess,
+  onIndexSuccess
 }
