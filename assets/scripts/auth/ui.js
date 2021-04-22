@@ -25,6 +25,7 @@ const onSignInSuccess = function (response) {
   $('#update').show()
   $('#show').show()
   $('#index').show()
+  $('#delete').show()
 }
 
 // confirm change password succeeded
