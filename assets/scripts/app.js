@@ -12,6 +12,7 @@ $(() => {
   $('#update').hide()
   $('#show').hide()
   $('#main').hide()
+  $('#index').hide()
   // auth events
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)

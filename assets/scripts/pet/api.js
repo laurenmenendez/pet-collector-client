@@ -41,7 +41,7 @@ const show = function (formData) {
 const index = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiURL + '/pets',
+    url: config.apiUrl + '/pets',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }

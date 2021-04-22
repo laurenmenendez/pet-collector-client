@@ -48,6 +48,14 @@ const onShowSuccess = function (response) {
 
 const onIndexSuccess = function (response) {
   console.log(response)
+  const pets = response.pets
+  pets.forEach(pet => {
+    $('#messages').append(
+      `<p>Pet name: ${pet.name}</p>
+      <p>Pet type: ${pet.type}</p>
+      <p>Pet age: ${pet.age}</p>`
+    )
+  })
 }
 
 module.exports = {
