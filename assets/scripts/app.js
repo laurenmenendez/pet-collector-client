@@ -20,10 +20,11 @@ $(() => {
   $('#change-password-button').on('click', authEvents.onChangePasswordButton)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
-  // CRUD pet pet events
+  // CRUD pet events
   $('#create').on('submit', petEvents.onCreate)
   $('#update').on('submit', petEvents.onUpdate)
   $('#show').on('submit', petEvents.onShow)
   $('#show').on('submit', petEvents.onShow)
   $('#index').on('click', petEvents.onIndex)
+  $('#delete').on('submit', petEvents.onDelete)
 })

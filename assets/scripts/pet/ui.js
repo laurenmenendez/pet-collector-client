@@ -58,9 +58,15 @@ const onIndexSuccess = function (response) {
   })
 }
 
+const onDeleteSuccess = function () {
+  $('#messages').html(`<p>${store.user.pet.name} has been removed. We're sorry to see them go!</p>`)
+  $('#delete-form').trigger('reset')
+}
+
 module.exports = {
   onCreateSuccess,
   onUpdateSuccess,
   onShowSuccess,
-  onIndexSuccess
+  onIndexSuccess,
+  onDeleteSuccess
 }

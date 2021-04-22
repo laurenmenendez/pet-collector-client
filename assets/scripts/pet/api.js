@@ -48,9 +48,20 @@ const index = function () {
   })
 }
 
+const deletePet = function (name) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/pets/' + name,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   update,
   show,
-  index
+  index,
+  deletePet
 }

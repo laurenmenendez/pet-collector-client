@@ -1,6 +1,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../.././lib/get-form-fields')
+const store = require('.././store')
 
 // create pet event handler
 const onCreate = function (event) {
@@ -36,9 +37,21 @@ const onIndex = function (event) {
     .catch(ui.onError)
 }
 
+const onDelete = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  store.user.pet = formData.pet
+  const name = store.user.pet.name
+  api.deletePet(name)
+    .then(ui.onDeleteSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onCreate,
   onUpdate,
   onShow,
-  onIndex
+  onIndex,
+  onDelete
 }
