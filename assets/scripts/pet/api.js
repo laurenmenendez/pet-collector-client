@@ -48,10 +48,10 @@ const index = function () {
   })
 }
 
-const deletePet = function (name) {
+const deletePet = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/pets/' + name,
+    url: config.apiUrl + '/pets/' + id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }

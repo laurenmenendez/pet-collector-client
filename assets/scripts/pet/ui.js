@@ -58,20 +58,22 @@ const onIndexSuccess = function (response) {
       `<p>Name: ${pet.name}</p>
       <p>Type: ${pet.type}</p>
       <p>Age: ${pet.age}</p>
+      <div class="update">
       <form class="update-form" data-id="${pet._id}">
         <h3 class="text-tertiary">Update pet</h3>
         <input type="text" name="pet[name]" placeholder="New pet name">
         <input type="text" name="pet[type]" placeholder="New pet type">
         <input type="number" name="pet[age]" placeholder="New pet age">
         <button type="submit" class="btn-pet">Submit</button>
-      </form>`
+      </form>
+      <button class="delete-btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>`
     )
   })
 }
 
 const onDeleteSuccess = function () {
-  $('#messages').html(`<p>${store.user.pet.name} has been removed. We're sorry to see them go!</p>`)
-  $('#delete-form').trigger('reset')
+  $('#data').html('')
+  $('#messages').html(`<p>${store.user.petName} has been removed. We're sorry to see them go!</p>`)
 }
 
 // error

@@ -9,7 +9,7 @@ $(() => {
   $('#change-password-button').hide()
   $('#sign-out-button').hide()
   $('#create').hide()
-  $('#show').hide()
+  // $('#show').hide()
   $('#main').hide()
   $('#index').hide()
   $('#delete').hide()
@@ -22,7 +22,6 @@ $(() => {
   // CRUD pet events
   $('#create').on('submit', petEvents.onCreate)
   $('#data').on('submit', petEvents.onUpdate)
-  $('#show').on('submit', petEvents.onShow)
+  $('#data').on('click', petEvents.onDelete)
   $('#index').on('click', petEvents.onIndex)
-  $('#delete').on('submit', petEvents.onDelete)
 })

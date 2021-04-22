@@ -42,11 +42,11 @@ const onIndex = function (event) {
 
 const onDelete = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  store.user.pet = formData.pet
-  const name = store.user.pet.name
-  api.deletePet(name)
+  const btn = event.target
+  const id = $(btn).data('id')
+  const user = store.user
+  user.petName = $(btn).data('name')
+  api.deletePet(id)
     .then(ui.onDeleteSuccess)
     .catch(ui.onError)
 }
