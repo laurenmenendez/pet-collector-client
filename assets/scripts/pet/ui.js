@@ -55,18 +55,19 @@ const onIndexSuccess = function (response) {
   $('#data').html('')
   pets.forEach(pet => {
     $('#data').append(
-      `<p>Name: ${pet.name}</p>
+      `<div class="index-content">
+      <p>Name: ${pet.name}</p>
       <p>Type: ${pet.type}</p>
       <p>Age: ${pet.age}</p>
-      <div class="update">
       <form class="update-form" data-id="${pet._id}">
         <h3 class="text-tertiary">Update pet</h3>
         <input type="text" name="pet[name]" placeholder="New pet name">
         <input type="text" name="pet[type]" placeholder="New pet type">
         <input type="number" name="pet[age]" placeholder="New pet age">
-        <button type="submit" class="btn-pet">Submit</button>
+        <button type="submit" class="btn btn-pet">Submit</button>
       </form>
-      <button class="delete-btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>`
+      <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>
+      </div>`
     )
   })
 }

@@ -13,6 +13,7 @@ $(() => {
   $('#main').hide()
   $('#index').hide()
   $('#delete').hide()
+  $('.nav-container').hide()
   // auth events
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)

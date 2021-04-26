@@ -1,1 +1,87 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Schoolbell&display=swap');
+
+$light-yellow-background: #FFFFC2;
+$purple-primary: #977FD7;
+$pink-secondary: #F5A9CB;
+$blue-tertiary: #3895D3;
+$btn-background: #D7FCEB;
+
+body {
+  font-family: Roboto, serif;
+  font-size: 18px;
+  justify-content: space-evenly;
+  background-color: $light-yellow-background;
+  color: $pink-secondary;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+}
+
+h1 {
+  font-family: Schoolbell, sans-serif;
+  color: $purple-primary;
+}
+
+h2 {
+  color: $pink-secondary;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: $blue-tertiary;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  background-color: $btn-background;
+  color: $pink-secondary;
+  border: solid $purple-primary;
+  &:hover {
+    background-color: $purple-primary;
+    color: $btn-background;
+    border: solid $pink-secondary;
+    font-weight: 700;
+  }
+}
+
+.nav-container {
+  border-top: 2px dotted $blue-tertiary;
+  border-bottom: 2px dotted $blue-tertiary;
+  padding: 20px 70px;
+  margin: 15px
+}
+
+.sign-up, .create, .index {
+  border-bottom: 2px dotted $pink-secondary;
+  padding-bottom: 15px;
+  margin: 15px
+}
+
+.sign-in, .messages {
+  padding-top: 15px
+}
+
+
+.data {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: row;
+}
+
+// .update-form {
+//   align-self: flex-start
+//
+// }

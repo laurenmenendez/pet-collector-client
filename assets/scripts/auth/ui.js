@@ -7,6 +7,7 @@ const onSignUpSuccess = function () {
   $('#messages').text('Thanks for signing up!')
   $('#sign-up-form').trigger('reset')
   $('.sign-up').hide()
+  $('.nav-container').show()
 }
 
 // confirm sign in succeeded and transition to view2
@@ -26,6 +27,7 @@ const onSignInSuccess = function (response) {
   $('#show').show()
   $('#index').show()
   $('#delete').show()
+  $('.nav-container').show()
 }
 
 // confirm change password succeeded
