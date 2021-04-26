@@ -25,7 +25,6 @@ const onUpdateSuccess = function (response) {
   // create variable for html
   const pet = store.user.pet
   // add pet info to html
-  $('#data').html('')
   $('#messages').html(
     `<p>Pet updated!</p>
     <p>Name: ${pet.name}</p>
@@ -55,10 +54,13 @@ const onIndexSuccess = function (response) {
   $('#data').html('')
   pets.forEach(pet => {
     $('#data').append(
-      `<div class="index-content">
+      `<div class="content-packet">
       <p>Name: ${pet.name}</p>
       <p>Type: ${pet.type}</p>
       <p>Age: ${pet.age}</p>
+      </div>`)
+    $('#update').append(
+      `<div class="update">
       <form class="update-form" data-id="${pet._id}">
         <h3 class="text-tertiary">Update pet</h3>
         <input type="text" name="pet[name]" placeholder="New pet name">
@@ -66,7 +68,9 @@ const onIndexSuccess = function (response) {
         <input type="number" name="pet[age]" placeholder="New pet age">
         <button type="submit" class="btn btn-pet">Submit</button>
       </form>
-        <button class="update-button">Update pet</button>
+      </div>`)
+    $('#delete').append(
+      `<div class="delete-div">
       <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>
       </div>`
     )
@@ -74,7 +78,6 @@ const onIndexSuccess = function (response) {
 }
 
 const onDeleteSuccess = function () {
-  $('#data').html('')
   $('#messages').html(`<p>${store.user.petName} has been removed. We're sorry to see them go!</p>`)
 }
 

@@ -27,16 +27,16 @@ const update = function (formData, id) {
   })
 }
 
-const show = function (formData) {
-  return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/pets/show',
-    data: formData,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
+// const show = function (formData) {
+//   return $.ajax({
+//     method: 'POST',
+//     url: config.apiUrl + '/pets/show',
+//     data: formData,
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     }
+//   })
+// }
 
 const index = function () {
   return $.ajax({
@@ -61,7 +61,7 @@ const deletePet = function (id) {
 module.exports = {
   create,
   update,
-  show,
+  // show,
   index,
   deletePet
 }

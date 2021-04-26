@@ -22,7 +22,7 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   // CRUD pet events
   $('#create').on('submit', petEvents.onCreate)
-  $('#data').on('submit', petEvents.onUpdate)
-  $('#data').on('click', petEvents.onDelete)
+  $('#update').on('submit', petEvents.onUpdate)
+  $('#delete').on('click', petEvents.onDelete)
   $('#index').on('click', petEvents.onIndex)
 })

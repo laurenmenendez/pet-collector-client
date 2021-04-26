@@ -8,6 +8,9 @@ const onSignUpSuccess = function () {
   $('#sign-up-form').trigger('reset')
   $('.sign-up').hide()
   $('.nav-container').show()
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 // confirm sign in succeeded and transition to view2
@@ -28,6 +31,9 @@ const onSignInSuccess = function (response) {
   $('#index').show()
   $('#delete').show()
   $('.nav-container').show()
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 // confirm change password succeeded
@@ -35,11 +41,18 @@ const onChangePasswordSuccess = function () {
   $('#messages').text('Changed password successfully')
   $('#change-password').trigger('reset')
   $('#change-password').hide()
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 // confirm sign out succeeded and return page to view1
 const onSignOutSuccess = function () {
   $('#messages').text('Signed out successfully')
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
+
   store.user = null
   $('#intro').show()
   $('#change-password-button').hide()
