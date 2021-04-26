@@ -108,7 +108,6 @@ form {
   padding-right: 15px;
   padding-left: 15px;
   justify-content: space-evenly;
-  flex-wrap: wrap
 }
 
 .update-form {
@@ -123,7 +122,6 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap
 }
 
 .delete-div {
@@ -133,6 +131,8 @@ form {
 
 .delete button {
   display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .messages {

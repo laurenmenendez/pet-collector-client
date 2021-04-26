@@ -63,10 +63,19 @@ const onDelete = function (event) {
     .catch(ui.onError)
 }
 
+const onUpdateButton = function (event) {
+  const btn = event.target
+  const id = $(btn).data('id')
+  console.log(id)
+  const form = $('.update-form').find('[data-id="608085e8925af13bd8ae4948"]')
+  $(form).show()
+}
+
 module.exports = {
   onCreate,
   onUpdate,
   // onShow,
   onIndex,
-  onDelete
+  onDelete,
+  onUpdateButton
 }

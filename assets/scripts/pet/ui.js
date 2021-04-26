@@ -15,6 +15,9 @@ const onCreateSuccess = function (response) {
     <p>Age: ${pet.age}</p>`
   )
   $('#create-form').trigger('reset')
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 const onUpdateSuccess = function (response) {
@@ -32,6 +35,9 @@ const onUpdateSuccess = function (response) {
     <p>Age: ${pet.age}</p>`
   )
   $('#update-form').trigger('reset')
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 const onShowSuccess = function (response) {
@@ -46,6 +52,9 @@ const onShowSuccess = function (response) {
     <p>Age: ${pet.age}</p>`
   )
   $('#show-form').trigger('reset')
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 const onIndexSuccess = function (response) {
@@ -69,16 +78,23 @@ const onIndexSuccess = function (response) {
         <button type="submit" class="btn btn-pet">Submit</button>
       </form>
       </div>`)
+    $('#update-button').append(
+      `<button class="btn btn-pet" data-id="${pet._id}">Update pet</button>`
+    )
     $('#delete').append(
       `<div class="delete-div">
       <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>
       </div>`
     )
   })
+  $('.update-form').hide()
 }
 
 const onDeleteSuccess = function () {
   $('#messages').html(`<p>${store.user.petName} has been removed. We're sorry to see them go!</p>`)
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 // error
