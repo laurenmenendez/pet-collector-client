@@ -63,7 +63,7 @@ form {
   border-top: 2px dotted $blue-tertiary;
   border-bottom: 2px dotted $blue-tertiary;
   padding: 20px 70px;
-  margin: 15px
+  margin: 15px;
 }
 
 .sign-up, .create, .messages {
@@ -157,4 +157,15 @@ form {
 
 .messages {
   color: $purple-primary
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  width: auto;
+  height: 100px;
+  margin: 20px;
 }
