@@ -8,6 +8,7 @@ const onCreate = function (event) {
   $('#data').html('')
   $('#update').html('')
   $('#delete').html('')
+  $('#update-button').html('')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -20,6 +21,7 @@ const onUpdate = function (event) {
   $('#data').html('')
   $('#update').html('')
   $('#delete').html('')
+  $('#update-button').html('')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -31,19 +33,11 @@ const onUpdate = function (event) {
     .catch(ui.onError)
 }
 
-// const onShow = function (event) {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.show(formData)
-//     .then(ui.onShowSuccess)
-//     .catch(ui.onError)
-// }
-
 const onIndex = function (event) {
   $('#data').html('')
   $('#update').html('')
   $('#delete').html('')
+  $('#update-button').html('')
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onError)
@@ -53,6 +47,7 @@ const onDelete = function (event) {
   $('#data').html('')
   $('#update').html('')
   $('#delete').html('')
+  $('#update-button').html('')
   event.preventDefault()
   const btn = event.target
   const id = $(btn).data('id')
@@ -84,7 +79,6 @@ const onUpdateButton = function (event) {
 module.exports = {
   onCreate,
   onUpdate,
-  // onShow,
   onIndex,
   onDelete,
   onUpdateButton

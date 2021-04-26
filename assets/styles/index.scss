@@ -110,6 +110,23 @@ form {
   justify-content: space-evenly;
 }
 
+.update-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.update-btn-div {
+  display: flex;
+  padding: 5px;
+  align-items: center
+}
+
+.update-btn-div button {
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 .update-form {
   display: flex;
   flex-direction: column;
@@ -134,6 +151,7 @@ form {
   margin-left: 50px;
   margin-right: 50px;
 }
+
 
 .messages {
   color: $purple-primary

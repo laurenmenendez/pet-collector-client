@@ -69,7 +69,9 @@ const onIndexSuccess = function (response) {
       <p>Age: ${pet.age}</p>
       </div>`)
     $('#update-button').append(
-      `<button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Update pet</button>`
+      `<div class="update-btn-div">
+      <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Update pet</button>
+      </div>`
     )
     $('#delete').append(
       `<div class="delete-div">
