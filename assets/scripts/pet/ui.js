@@ -34,7 +34,7 @@ const onUpdateSuccess = function (response) {
     <p>Type: ${pet.type}</p>
     <p>Age: ${pet.age}</p>`
   )
-  $('#update-form').trigger('reset')
+  $('.update-form').trigger('reset')
   setTimeout(() => {
     $('#messages').text('')
   }, 5000)

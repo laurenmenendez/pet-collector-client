@@ -58,13 +58,15 @@ form {
 }
 
 .nav-container {
+  display: flex;
+  flex-direction: row;
   border-top: 2px dotted $blue-tertiary;
   border-bottom: 2px dotted $blue-tertiary;
   padding: 20px 70px;
   margin: 15px
 }
 
-.sign-up, .create, .index, .messages {
+.sign-up, .create, .messages {
   border-bottom: 2px dotted $pink-secondary;
   padding-bottom: 15px;
   margin: 15px
