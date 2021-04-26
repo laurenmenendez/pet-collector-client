@@ -68,18 +68,8 @@ const onIndexSuccess = function (response) {
       <p>Type: ${pet.type}</p>
       <p>Age: ${pet.age}</p>
       </div>`)
-    $('#update').append(
-      `<div class="update">
-      <form class="update-form" data-id="${pet._id}">
-        <h3 class="text-tertiary">Update pet</h3>
-        <input type="text" name="pet[name]" placeholder="New pet name">
-        <input type="text" name="pet[type]" placeholder="New pet type">
-        <input type="number" name="pet[age]" placeholder="New pet age">
-        <button type="submit" class="btn btn-pet">Submit</button>
-      </form>
-      </div>`)
     $('#update-button').append(
-      `<button class="btn btn-pet" data-id="${pet._id}">Update pet</button>`
+      `<button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Update pet</button>`
     )
     $('#delete').append(
       `<div class="delete-div">
@@ -87,7 +77,6 @@ const onIndexSuccess = function (response) {
       </div>`
     )
   })
-  $('.update-form').hide()
 }
 
 const onDeleteSuccess = function () {

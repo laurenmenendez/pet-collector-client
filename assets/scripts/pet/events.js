@@ -66,9 +66,19 @@ const onDelete = function (event) {
 const onUpdateButton = function (event) {
   const btn = event.target
   const id = $(btn).data('id')
+  const name = $(btn).data('name')
   console.log(id)
-  const form = $('.update-form').find('[data-id="608085e8925af13bd8ae4948"]')
-  $(form).show()
+  console.log(name)
+  $('#update').append(
+    `<div class="update">
+    <form class="update-form" data-id="${id}">
+      <h3 class="text-tertiary">Update ${name}</h3>
+      <input type="text" name="pet[name]" placeholder="New pet name">
+      <input type="text" name="pet[type]" placeholder="New pet type">
+      <input type="number" name="pet[age]" placeholder="New pet age">
+      <button type="submit" class="btn btn-pet">Submit</button>
+    </form>
+    </div>`)
 }
 
 module.exports = {
