@@ -18,6 +18,7 @@ const onCreateSuccess = function (response) {
   setTimeout(() => {
     $('#messages').text('')
   }, 5000)
+  $('#change-password').hide()
 }
 
 const onUpdateSuccess = function (response) {
@@ -35,23 +36,6 @@ const onUpdateSuccess = function (response) {
     <p>Age: ${pet.age}</p>`
   )
   $('.update-form').trigger('reset')
-  setTimeout(() => {
-    $('#messages').text('')
-  }, 5000)
-}
-
-const onShowSuccess = function (response) {
-  // save returned pet object on store.user
-  store.user.pet = response.pet
-  // create variable for html
-  const pet = store.user.pet
-  // add pet info to html
-  $('#messages').html(
-    `<p>Name: ${pet.name}</p>
-    <p>Type: ${pet.type}</p>
-    <p>Age: ${pet.age}</p>`
-  )
-  $('#show-form').trigger('reset')
   setTimeout(() => {
     $('#messages').text('')
   }, 5000)
@@ -79,6 +63,7 @@ const onIndexSuccess = function (response) {
       </div>`
     )
   })
+    $('#change-password').hide()
 }
 
 const onDeleteSuccess = function () {
@@ -97,7 +82,6 @@ const onError = function (err) {
 module.exports = {
   onCreateSuccess,
   onUpdateSuccess,
-  onShowSuccess,
   onIndexSuccess,
   onDeleteSuccess,
   onError

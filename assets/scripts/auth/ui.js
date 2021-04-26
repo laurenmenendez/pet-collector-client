@@ -63,8 +63,13 @@ const onSignOutSuccess = function () {
   $('#create').hide()
   $('#update').hide()
   $('#show').hide()
+  $('#nav-container').hide()
   $('#intro').show()
   $('#main').hide()
+  $('#data').html('')
+  $('#update').html('')
+  $('#delete').html('')
+  $('#update-button').html('')
 }
 
 // error
