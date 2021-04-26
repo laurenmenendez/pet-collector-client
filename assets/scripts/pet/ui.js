@@ -66,6 +66,7 @@ const onIndexSuccess = function (response) {
         <input type="number" name="pet[age]" placeholder="New pet age">
         <button type="submit" class="btn btn-pet">Submit</button>
       </form>
+        <button class="update-button">Update pet</button>
       <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>
       </div>`
     )

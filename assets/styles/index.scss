@@ -64,13 +64,13 @@ form {
   margin: 15px
 }
 
-.sign-up, .create, .index {
+.sign-up, .create, .index, .messages {
   border-bottom: 2px dotted $pink-secondary;
   padding-bottom: 15px;
   margin: 15px
 }
 
-.sign-in, .messages {
+.sign-in, {
   padding-top: 15px
 }
 
@@ -79,9 +79,12 @@ form {
   display: flex;
   align-self: flex-start;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center
 }
 
-// .update-form {
-//   align-self: flex-start
-//
-// }
+.index-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
