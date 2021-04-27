@@ -63,7 +63,7 @@ const onIndexSuccess = function (response) {
       </div>`
     )
   })
-    $('#change-password').hide()
+  $('#change-password').hide()
 }
 
 const onDeleteSuccess = function () {
