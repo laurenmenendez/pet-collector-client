@@ -19,3 +19,5 @@ Pet Collector is an app that allows you to create custom pets and store them for
 - I can create a new pet and receive confirmation of my new pet details
 
 ## Wireframes
+![Desktop](./assets/images/IMG_4050.jpg)
+![Mobile](./assets/images/IMG_4051.jpg)
