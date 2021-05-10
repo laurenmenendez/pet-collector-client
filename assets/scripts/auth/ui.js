@@ -6,7 +6,6 @@ const store = require('.././store')
 const onSignUpSuccess = function () {
   $('#messages').text('Thanks for signing up!')
   $('#sign-up-form').trigger('reset')
-  $('.sign-up').hide()
   $('.nav-container').show()
   setTimeout(() => {
     $('#messages').text('')
