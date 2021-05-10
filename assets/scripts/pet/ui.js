@@ -41,6 +41,7 @@ const onUpdateSuccess = function (response) {
 
 const onIndexSuccess = function (response) {
   const pets = response.pets
+  console.log(pets)
   if (pets.length === 0) {
     $('messages').text('You don\'t have any pets yet! Create a pet above.')
   } else {
