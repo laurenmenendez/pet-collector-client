@@ -14,7 +14,6 @@ const onSignUpSuccess = function () {
 
 // confirm sign in succeeded and transition to view2
 const onSignInSuccess = function (response) {
-  console.log(response)
   store.user = response.user
   $('#messages').text('Successfully signed in.')
   $('#main').show()

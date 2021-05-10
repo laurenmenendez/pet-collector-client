@@ -26,8 +26,6 @@ const onUpdate = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   const id = $(form).data('id')
-  console.log(form)
-  console.log(id)
   api.update(formData, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError)
@@ -62,8 +60,6 @@ const onUpdateButton = function (event) {
   const btn = event.target
   const id = $(btn).data('id')
   const name = $(btn).data('name')
-  console.log(id)
-  console.log(name)
   $('#update').append(
     `<div class="update">
     <form class="update-form" data-id="${id}">
