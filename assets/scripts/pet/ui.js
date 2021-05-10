@@ -64,8 +64,11 @@ const onIndexSuccess = function (response) {
         </div>`
       )
     })
-    $('#change-password').hide()
   }
+  $('#change-password').hide()
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 5000)
 }
 
 const onDeleteSuccess = function () {
