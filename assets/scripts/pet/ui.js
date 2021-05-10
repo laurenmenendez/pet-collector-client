@@ -22,8 +22,6 @@ const onCreateSuccess = function (response) {
 }
 
 const onUpdateSuccess = function (response) {
-  console.log('success')
-  console.log(response)
   // save returned pet object on store.user
   store.user.pet = response.pet
   // create variable for html
@@ -42,28 +40,31 @@ const onUpdateSuccess = function (response) {
 }
 
 const onIndexSuccess = function (response) {
-  console.log(response)
   const pets = response.pets
-  $('#data').html('')
-  pets.forEach(pet => {
-    $('#data').append(
-      `<div class="content-packet">
-      <p>Name: ${pet.name}</p>
-      <p>Type: ${pet.type}</p>
-      <p>Age: ${pet.age}</p>
-      </div>`)
-    $('#update-button').append(
-      `<div class="update-btn-div">
-      <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Update pet</button>
-      </div>`
-    )
-    $('#delete').append(
-      `<div class="delete-div">
-      <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>
-      </div>`
-    )
-  })
-  $('#change-password').hide()
+  if (pets.length === 0) {
+    $('messages').text('You don\'t have any pets yet! Create a pet above.')
+  } else {
+    $('#data').html('')
+    pets.forEach(pet => {
+      $('#data').append(
+        `<div class="content-packet">
+        <p>Name: ${pet.name}</p>
+        <p>Type: ${pet.type}</p>
+        <p>Age: ${pet.age}</p>
+        </div>`)
+      $('#update-button').append(
+        `<div class="update-btn-div">
+        <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Update pet</button>
+        </div>`
+      )
+      $('#delete').append(
+        `<div class="delete-div">
+        <button class="btn btn-pet" data-id="${pet._id}" data-name="${pet.name}">Delete pet</button>
+        </div>`
+      )
+    })
+    $('#change-password').hide()
+  }
 }
 
 const onDeleteSuccess = function () {
